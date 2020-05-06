@@ -1,0 +1,14 @@
+server:
+  port: 8300
+spring:
+  application:
+    name: consul-ribbon-service
+  cloud:
+    consul:
+      host: 192.168.75.134
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+service-url:
+  # 这里只要指定服务名称，配置中心就能根据发现的服务名来获取到的ip来进行访问
+  consul-user-service: http://consul-user-service
